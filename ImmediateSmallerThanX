@@ -1,0 +1,19 @@
+class Solution
+{
+    // Complete the function
+    public static int immediateSmaller(int arr[], int n, int x)
+    {
+        int closestMin = -1;
+		
+		for(int i=0;i<n;i++) {
+			if(arr[i] < x && arr[i] > closestMin)
+				closestMin = arr[i];
+		}
+		
+	   if(closestMin!=-1)
+		  return closestMin;
+	   
+	   else
+		   return -1;
+    }
+}
