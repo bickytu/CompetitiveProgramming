@@ -1,0 +1,35 @@
+class Reverse{
+    
+    // Function to reverse array in group of k 
+    public static ArrayList<Integer> reverseInGroups(ArrayList<Integer> mv, int n, int k) {
+        
+       
+       for(int j=0;j<n;j++) {
+			reverse(mv,j,k);
+			j = j + (k-1);
+		}
+	
+		return mv;
+        
+        
+    }
+    
+    public static void reverse(ArrayList<Integer> mv,int j,int p) {
+	    int last = j+p-1;
+		
+		int size = mv.size();
+		if(last >= size )
+			last = size - 1;
+
+        int mid = (j+last)/2;
+        
+		for(int k=j;k<=mid;k++) {
+			int temp = mv.get(k);
+			mv.set(k,mv.get(last));
+			mv.set(last,temp);
+			--last;
+		}
+			
+	}
+
+}
