@@ -1,0 +1,32 @@
+class Leader{
+    
+    // This functions find the leaders in the array and returns
+    // arraylist containing the leaders
+    // arr: input array
+    // n: size of array
+    static ArrayList<Integer> leaders(int arr[], int n){
+        
+        int size = arr.length;
+        
+        ArrayList arrayList = new ArrayList();
+        int right_Max=arr[size-1];
+        int tempArray[] = new int[size];
+        int count=0;
+        
+        for(int i=size-1;i>=0;i--){
+            if(arr[i] >=right_Max){
+                tempArray[count] = arr[i];
+                right_Max= arr[i];
+                ++count;
+            }
+             
+        }
+        
+        for(int j=count-1;j>=0;j--){
+            arrayList.add(tempArray[j]);
+        }
+        
+        return arrayList;
+    }
+    
+}
