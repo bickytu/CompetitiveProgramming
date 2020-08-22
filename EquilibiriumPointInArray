@@ -1,0 +1,44 @@
+class EquilibriumPoint {
+
+    // Function to find equilibrium point
+    // a: input array
+    // n: size of array
+    public static int equilibriumPoint(long arr[], int n) {
+
+        int size = arr.length;
+		
+		if(size ==0)
+			return -1;
+		if(size ==1)
+			return 1;
+	
+		int startIndex =0, lastIndex=size-1, leftSum=0,rightSum=0;
+		
+        while(lastIndex-startIndex!=0){
+			
+			if(lastIndex <= 0 || startIndex >= size-1)
+				return -1;
+				
+			if(leftSum > rightSum) {
+				rightSum += arr[lastIndex--];
+			}
+			else if(rightSum > leftSum ) {
+				leftSum += arr[startIndex++];
+			}
+			else {
+				rightSum += arr[lastIndex--];
+				leftSum += arr[startIndex++];
+			}
+				
+				
+		}
+		
+		if(leftSum==rightSum)
+			return startIndex+1;
+		
+		else
+		    return -1;
+			
+
+    }
+}
