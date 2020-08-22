@@ -1,0 +1,22 @@
+class Wave{
+
+    
+    // Function to convert the given array to wave like array
+    // arr: input array
+    // n: size of the array
+    public static void convertToWave(int arr[], int n){
+        
+       int size = arr.length;
+		
+		if(size <=1)
+			return;
+		for(int j=1;j<size;j++) {
+			int temp = arr[j-1];
+			arr[j-1] = arr[j];
+			arr[j] = temp;
+			++j;
+		}
+        
+    }
+    
+}
